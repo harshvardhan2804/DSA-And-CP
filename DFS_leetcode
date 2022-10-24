@@ -1,0 +1,10 @@
+void dfs(vector<vector<int>> &graph,int i,int j,vector<vector<int>> &ans,vector<bool> &vis){
+        vis[j]=true;
+        for(auto &x:graph[j]){
+            if(!vis[x]){
+                ans[x].push_back(i);
+                dfs(graph,i,x,ans,vis);
+            }
+            
+        }
+    }
